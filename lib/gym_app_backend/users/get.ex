@@ -13,7 +13,7 @@ defmodule GymAppBackend.User.Get do
   end
 
   defp handle_response({:ok, uuid}) do
-    case Repo.get(User, uuuid) do
+    case Repo.get(User, uuid) do
       nil -> {:error, "Invalid UUID"}
       user -> {:ok, user}
     end
