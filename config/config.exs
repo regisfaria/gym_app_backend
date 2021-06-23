@@ -10,6 +10,10 @@ use Mix.Config
 config :gym_app_backend,
   ecto_repos: [GymAppBackend.Repo]
 
+config :gym_app_backend, GymAppBackend.Repo,
+  migration_primary_key: [type: :binary_id],
+  migration_foreign_key: [type: :binary_id]
+
 # Configures the endpoint
 config :gym_app_backend, GymAppBackendWeb.Endpoint,
   url: [host: "localhost"],
