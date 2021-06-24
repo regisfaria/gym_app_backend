@@ -2,6 +2,7 @@ defmodule WorkoutyWeb.Schema.Types.Root do
   use Absinthe.Schema.Notation
 
   alias WorkoutyWeb.Resolvers.User, as: UserResolver
+  alias Crudry.Middlewares.TranslateErrors
 
   import_types WorkoutyWeb.Schema.Types.User
 
@@ -18,6 +19,7 @@ defmodule WorkoutyWeb.Schema.Types.Root do
       arg :input, non_null(:create_user_input)
 
       resolve &UserResolver.create/2
+      middleware TranslateErrors
     end
   end
 end
