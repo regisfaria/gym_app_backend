@@ -1,7 +1,7 @@
-defmodule GymAppBackendWeb.IMCController do
-  use GymAppBackendWeb, :controller
+defmodule WorkoutyWeb.IMCController do
+  use WorkoutyWeb, :controller
 
-  alias GymAppBackend.IMC
+  alias Workouty.IMC
 
   def index(conn, params) do
     params

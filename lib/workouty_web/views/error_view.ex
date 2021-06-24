@@ -1,5 +1,5 @@
-defmodule GymAppBackendWeb.ErrorView do
-  use GymAppBackendWeb, :view
+defmodule WorkoutyWeb.ErrorView do
+  use WorkoutyWeb, :view
 
   # If you want to customize a particular status code
   # for a certain format, you may uncomment below.

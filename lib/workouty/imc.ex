@@ -1,4 +1,4 @@
-defmodule GymAppBackend.IMC do
+defmodule Workouty.IMC do
   def calculate(%{"filename" => filename}) do
     filename
     |> File.read()

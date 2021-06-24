@@ -1,2 +1,2 @@
 ExUnit.start()
-Ecto.Adapters.SQL.Sandbox.mode(GymAppBackend.Repo, :manual)
+Ecto.Adapters.SQL.Sandbox.mode(Workouty.Repo, :manual)

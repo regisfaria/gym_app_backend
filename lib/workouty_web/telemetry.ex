@@ -1,4 +1,4 @@
-defmodule GymAppBackendWeb.Telemetry do
+defmodule WorkoutyWeb.Telemetry do
   use Supervisor
   import Telemetry.Metrics
 
@@ -49,7 +49,7 @@ defmodule GymAppBackendWeb.Telemetry do
     [
       # A module, function and arguments to be invoked periodically.
       # This function must call :telemetry.execute/3 and a metric must be added above.
-      # {GymAppBackendWeb, :count_users, []}
+      # {WorkoutyWeb, :count_users, []}
     ]
   end
 end

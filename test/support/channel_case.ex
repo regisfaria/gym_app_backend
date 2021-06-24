@@ -1,4 +1,4 @@
-defmodule GymAppBackendWeb.ChannelCase do
+defmodule WorkoutyWeb.ChannelCase do
   @moduledoc """
   This module defines the test case to be used by
   channel tests.
@@ -11,7 +11,7 @@ defmodule GymAppBackendWeb.ChannelCase do
   we enable the SQL sandbox, so changes done to the database
   are reverted at the end of every test. If you are using
   PostgreSQL, you can even run database tests asynchronously
-  by setting `use GymAppBackendWeb.ChannelCase, async: true`, although
+  by setting `use WorkoutyWeb.ChannelCase, async: true`, although
   this option is not recommended for other databases.
   """
 
@@ -21,18 +21,18 @@ defmodule GymAppBackendWeb.ChannelCase do
     quote do
       # Import conveniences for testing with channels
       import Phoenix.ChannelTest
-      import GymAppBackendWeb.ChannelCase
+      import WorkoutyWeb.ChannelCase
 
       # The default endpoint for testing
-      @endpoint GymAppBackendWeb.Endpoint
+      @endpoint WorkoutyWeb.Endpoint
     end
   end
 
   setup tags do
-    :ok = Ecto.Adapters.SQL.Sandbox.checkout(GymAppBackend.Repo)
+    :ok = Ecto.Adapters.SQL.Sandbox.checkout(Workouty.Repo)
 
     unless tags[:async] do
-      Ecto.Adapters.SQL.Sandbox.mode(GymAppBackend.Repo, {:shared, self()})
+      Ecto.Adapters.SQL.Sandbox.mode(Workouty.Repo, {:shared, self()})
     end
 
     :ok

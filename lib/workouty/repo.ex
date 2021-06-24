@@ -1,4 +1,4 @@
-defmodule GymAppBackend.Repo do
+defmodule Workouty.Repo do
   use Ecto.Repo,
     otp_app: :gym_app_backend,
     adapter: Ecto.Adapters.Postgres

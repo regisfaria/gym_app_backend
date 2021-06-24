@@ -1,4 +1,4 @@
-# GymAppBackend
+# Workouty
 
 To start your Phoenix server:
 

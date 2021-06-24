@@ -1,4 +1,4 @@
-defmodule GymAppBackend.MixProject do
+defmodule Workouty.MixProject do
   use Mix.Project
 
   def project do
@@ -19,7 +19,7 @@ defmodule GymAppBackend.MixProject do
   # Type `mix help compile.app` for more information.
   def application do
     [
-      mod: {GymAppBackend.Application, []},
+      mod: {Workouty.Application, []},
       extra_applications: [:logger, :runtime_tools]
     ]
   end
@@ -42,7 +42,9 @@ defmodule GymAppBackend.MixProject do
       {:telemetry_poller, "~> 0.4"},
       {:gettext, "~> 0.11"},
       {:jason, "~> 1.0"},
-      {:plug_cowboy, "~> 2.0"}
+      {:plug_cowboy, "~> 2.0"},
+      {:absinthe, "~> 1.5.0"},
+      {:absinthe_plug, "~> 1.5"}
     ]
   end
 

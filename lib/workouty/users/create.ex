@@ -1,5 +1,5 @@
-defmodule GymAppBackend.User.Create do
-  alias GymAppBackend.{Repo, User}
+defmodule Workouty.User.Create do
+  alias Workouty.{Repo, User}
 
   def call(params) do
     params

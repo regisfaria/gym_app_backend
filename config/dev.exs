@@ -1,7 +1,7 @@
 use Mix.Config
 
 # Configure your database
-config :gym_app_backend, GymAppBackend.Repo,
+config :gym_app_backend, Workouty.Repo,
   username: "postgres",
   password: "postgres",
   database: "gym_app_backend_dev",
@@ -15,7 +15,7 @@ config :gym_app_backend, GymAppBackend.Repo,
 # The watchers configuration can be used to run external
 # watchers to your application. For example, we use it
 # with webpack to recompile .js and .css sources.
-config :gym_app_backend, GymAppBackendWeb.Endpoint,
+config :gym_app_backend, WorkoutyWeb.Endpoint,
   http: [port: 4000],
   debug_errors: true,
   code_reloader: true,

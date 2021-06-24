@@ -1,4 +1,4 @@
-defmodule GymAppBackend.Repo.Migrations.CreateUsersTable do
+defmodule Workouty.Repo.Migrations.CreateUsersTable do
   use Ecto.Migration
 
   def change do

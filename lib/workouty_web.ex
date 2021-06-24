@@ -1,12 +1,12 @@
-defmodule GymAppBackendWeb do
+defmodule WorkoutyWeb do
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, views, channels and so on.
 
   This can be used in your application as:
 
-      use GymAppBackendWeb, :controller
-      use GymAppBackendWeb, :view
+      use WorkoutyWeb, :controller
+      use WorkoutyWeb, :view
 
   The definitions below will be executed for every view,
   controller, etc, so keep them short and clean, focused
@@ -19,11 +19,11 @@ defmodule GymAppBackendWeb do
 
   def controller do
     quote do
-      use Phoenix.Controller, namespace: GymAppBackendWeb
+      use Phoenix.Controller, namespace: WorkoutyWeb
 
       import Plug.Conn
-      import GymAppBackendWeb.Gettext
-      alias GymAppBackendWeb.Router.Helpers, as: Routes
+      import WorkoutyWeb.Gettext
+      alias WorkoutyWeb.Router.Helpers, as: Routes
     end
   end
 
@@ -31,7 +31,7 @@ defmodule GymAppBackendWeb do
     quote do
       use Phoenix.View,
         root: "lib/gym_app_backend_web/templates",
-        namespace: GymAppBackendWeb
+        namespace: WorkoutyWeb
 
       # Import convenience functions from controllers
       import Phoenix.Controller,
@@ -54,7 +54,7 @@ defmodule GymAppBackendWeb do
   def channel do
     quote do
       use Phoenix.Channel
-      import GymAppBackendWeb.Gettext
+      import WorkoutyWeb.Gettext
     end
   end
 
@@ -63,9 +63,9 @@ defmodule GymAppBackendWeb do
       # Import basic rendering functionality (render, render_layout, etc)
       import Phoenix.View
 
-      import GymAppBackendWeb.ErrorHelpers
-      import GymAppBackendWeb.Gettext
-      alias GymAppBackendWeb.Router.Helpers, as: Routes
+      import WorkoutyWeb.ErrorHelpers
+      import WorkoutyWeb.Gettext
+      alias WorkoutyWeb.Router.Helpers, as: Routes
     end
   end
 

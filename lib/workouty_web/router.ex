@@ -1,14 +1,21 @@
-defmodule GymAppBackendWeb.Router do
-  use GymAppBackendWeb, :router
+defmodule WorkoutyWeb.Router do
+  use WorkoutyWeb, :router
 
   pipeline :api do
     plug :accepts, ["json"]
   end
 
-  scope "/api", GymAppBackendWeb do
+  scope "/api", WorkoutyWeb do
     pipe_through :api
 
     get "/", IMCController, :index
+  end
+
+  scope "/api" do
+    pipe_through :api
+
+    forward "/graphql", Absinthe.Plug, schema: WorkoutyWeb.Schema
+    forward "/graphiql", Absinthe.Plug.GraphiQL, schema: WorkoutyWeb.Schema
   end
 
   # Enables LiveDashboard only for development
@@ -23,7 +30,7 @@ defmodule GymAppBackendWeb.Router do
 
     scope "/" do
       pipe_through [:fetch_session, :protect_from_forgery]
-      live_dashboard "/dashboard", metrics: GymAppBackendWeb.Telemetry
+      live_dashboard "/dashboard", metrics: WorkoutyWeb.Telemetry
     end
   end
 end

@@ -8,18 +8,18 @@
 use Mix.Config
 
 config :gym_app_backend,
-  ecto_repos: [GymAppBackend.Repo]
+  ecto_repos: [Workouty.Repo]
 
-config :gym_app_backend, GymAppBackend.Repo,
+config :gym_app_backend, Workouty.Repo,
   migration_primary_key: [type: :binary_id],
   migration_foreign_key: [type: :binary_id]
 
 # Configures the endpoint
-config :gym_app_backend, GymAppBackendWeb.Endpoint,
+config :gym_app_backend, WorkoutyWeb.Endpoint,
   url: [host: "localhost"],
   secret_key_base: "9Zsb4MQ3EkrE+ZGSl0MsnHY7s7wHf3itgZtcrtXLvQhthe4DsKsHhPBuIds8dGvT",
-  render_errors: [view: GymAppBackendWeb.ErrorView, accepts: ~w(json), layout: false],
-  pubsub_server: GymAppBackend.PubSub,
+  render_errors: [view: WorkoutyWeb.ErrorView, accepts: ~w(json), layout: false],
+  pubsub_server: Workouty.PubSub,
   live_view: [signing_salt: "wM4lmTuT"]
 
 # Configures Elixir's Logger

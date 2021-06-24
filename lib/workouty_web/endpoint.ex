@@ -1,4 +1,4 @@
-defmodule GymAppBackendWeb.Endpoint do
+defmodule WorkoutyWeb.Endpoint do
   use Phoenix.Endpoint, otp_app: :gym_app_backend
 
   # The session will be stored in the cookie and signed,
@@ -10,7 +10,7 @@ defmodule GymAppBackendWeb.Endpoint do
     signing_salt: "SYjqGLyv"
   ]
 
-  socket "/socket", GymAppBackendWeb.UserSocket,
+  socket "/socket", WorkoutyWeb.UserSocket,
     websocket: true,
     longpoll: false
 
@@ -48,5 +48,5 @@ defmodule GymAppBackendWeb.Endpoint do
   plug Plug.MethodOverride
   plug Plug.Head
   plug Plug.Session, @session_options
-  plug GymAppBackendWeb.Router
+  plug WorkoutyWeb.Router
 end

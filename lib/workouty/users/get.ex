@@ -1,6 +1,6 @@
-defmodule GymAppBackend.User.Get do
+defmodule Workouty.User.Get do
   alias Ecto.UUID
-  alias GymAppBackend.{Repo, User}
+  alias Workouty.{Repo, User}
 
   def call(id) do
     id

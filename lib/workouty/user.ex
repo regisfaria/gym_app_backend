@@ -1,4 +1,4 @@
-defmodule GymAppBackend.User do
+defmodule Workouty.User do
   use Ecto.Schema
   import Ecto.Changeset
 
