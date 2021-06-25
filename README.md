@@ -24,7 +24,9 @@ I've added a "insomniaRoutes.json" file in the project root, where you can impor
 
 **Email: regisprogramming@gmail.com**
 [LinkedIn](https://www.linkedin.com/in/regissfaria/)
+
 [GitHub](https://github.com/regisfaria)
+
 [GitLab](https://gitlab.com/regisfaria)
 
 ## Learn more
