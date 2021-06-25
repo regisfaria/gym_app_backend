@@ -23,11 +23,12 @@ I've added a "insomniaRoutes.json" file in the project root, where you can impor
 ## Contact
 
 **Email: regisprogramming@gmail.com**
-[LinkedIn](https://www.linkedin.com/in/regissfaria/)
 
-[GitHub](https://github.com/regisfaria)
+[LinkedIn](https://www.linkedin.com/in/regissfaria/) Profile
 
-[GitLab](https://gitlab.com/regisfaria)
+[GitHub](https://github.com/regisfaria) Profile
+
+[GitLab](https://gitlab.com/regisfaria) Profile
 
 ## Learn more
 
