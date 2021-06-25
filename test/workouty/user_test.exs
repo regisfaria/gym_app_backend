@@ -3,7 +3,7 @@ defmodule Workouty.UserTest do
 
   alias Workouty.User
 
-  describe "changeset/2" do
+  describe "changeset/1" do
     test "when all params are valid, returns a valid changeset" do
       params = %{name: "John Doe", email: "johndoe@email.com", password: "123456"}
 

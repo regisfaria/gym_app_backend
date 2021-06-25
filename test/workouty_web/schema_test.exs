@@ -109,4 +109,98 @@ defmodule Workouty.SchemaTest do
       assert response == expected_response
     end
   end
+
+  describe "training mutation" do
+    test "when valid params are given, creates a training", %{conn: conn} do
+      params = %{name: "John Doe", email: "johndoe@email.com", password: "123456"}
+
+      {:ok, %User{id: user_id}} = Create.call(params)
+
+      mutation = """
+        mutation {
+          training(input: {
+            userId: "#{user_id}",
+            startDate: "2021-08-30",
+            endDate: "2021-09-30",
+            exercises: [
+              {
+                name: "Corrida na esteira"
+                videoUrl: "www.google.com",
+                protocolDescription: "Correr a 10km/h",
+                repetitions: "20 minutos"
+              },
+              {
+                name: "Supino"
+                videoUrl: "www.google.com",
+                protocolDescription: "Regular",
+                repetitions: "3x15"
+              }
+            ]
+          }){
+            startDate
+            endDate
+            exercises {
+              name
+            }
+          }
+        }
+      """
+
+      response =
+        conn
+        |> post("/api/graphql", %{query: mutation})
+        |> json_response(:ok)
+
+      assert %{
+        "data" => %{
+          "training" => %{
+            "exercises" => [
+              %{"name" => "Corrida na esteira"},
+              %{"name" => "Supino"}
+            ],
+            "endDate" => "2021-09-30",
+            "startDate" => "2021-08-30"
+          }
+        }
+      } = response
+    end
+
+    test "when invalid params are given, returns an error", %{conn: conn} do
+      mutation = """
+        mutation {
+          training(input: {
+            startDate: "2021-08-30",
+            endDate: "2021-09-30",
+            exercises: [
+              {
+                name: "Corrida na esteira"
+                videoUrl: "www.google.com",
+                protocolDescription: "Correr a 10km/h",
+                repetitions: "20 minutos"
+              },
+              {
+                name: "Supino"
+                videoUrl: "www.google.com",
+                protocolDescription: "Regular",
+                repetitions: "3x15"
+              }
+            ]
+          }){
+            startDate
+            endDate
+            exercises {
+              name
+            }
+          }
+        }
+      """
+
+      response =
+        conn
+        |> post("/api/graphql", %{query: mutation})
+        |> json_response(:ok)
+
+      assert %{"errors" => [%{"locations" => [%{"column" => 14, "line" => 2}], "message" => "Argument \"input\" has invalid value {startDate: \"2021-08-30\", endDate: \"2021-09-30\", exercises: [{name: \"Corrida na esteira\", videoUrl: \"www.google.com\", protocolDescription: \"Correr a 10km/h\", repetitions: \"20 minutos\"}, {name: \"Supino\", videoUrl: \"www.google.com\", protocolDescription: \"Regular\", repetitions: \"3x15\"}]}.\nIn field \"userId\": Expected type \"UUID4!\", found null."}]} = response
+    end
+  end
 end
